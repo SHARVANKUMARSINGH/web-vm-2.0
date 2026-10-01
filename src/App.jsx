@@ -29,8 +29,8 @@ export default function App() {
           vga_bios: { url: '/vgabios.bin' },
           cdrom: { url: '/TinyCore-current.iso' },
 
-          // CRITICAL HARDWARE OVERRIDE: 1024 MB RAM, 32 MB VGA RAM
-          memory_size: 1024 * 1024 * 1024,
+          // Allocate 512 MB RAM to stay within mobile WebAssembly limits
+          memory_size: 512 * 1024 * 1024,
           vga_memory_size: 32 * 1024 * 1024,
 
           screen_container: screenRef.current,
@@ -117,7 +117,7 @@ export default function App() {
               </p>
             )}
 
-            <p className="status-hint">1 024 MB RAM · 32 MB VRAM · v86 Emulation</p>
+            <p className="status-hint">512 MB RAM · 32 MB VRAM · v86 Emulation</p>
           </div>
         </div>
       )}
